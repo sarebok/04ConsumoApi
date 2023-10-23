@@ -1,9 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const AgrupaPersonajes = ({ rmDataConVersiones }) => {
+const AgrupaPersonajes = ({ rmDataConVersiones, setPersonajesUnificados }) => {
   const [dict, setDict] = useState([]);
-  const [personajesUnificados, setPersonajesUnificados] = useState([]);
 
   const getFirstName = (object) => {
     const fullName = object.name;
@@ -31,9 +30,9 @@ const AgrupaPersonajes = ({ rmDataConVersiones }) => {
     for (let i = 0; i < dict.length; i++) {
       unifiedChars = rmDataConVersiones.filter((char) => char.name.includes(dict[i]));
 
-      unifiedArray.push({ name: dict[i], chars: unifiedChars });
+      unifiedArray.push({ id: unifiedChars[0].id, name: dict[i], chars: unifiedChars });
     }
-    console.log("unified", unifiedArray);
+    console.log("unified otro", unifiedChars);
     setPersonajesUnificados(unifiedArray);
   };
 

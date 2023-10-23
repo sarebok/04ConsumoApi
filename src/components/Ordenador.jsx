@@ -6,7 +6,8 @@ const Ordenador = ({ rmDataConVersiones, setRmOrderedData }) => {
   //este valor lo inyectare en cada personaje de la data original
   //luego, usare ese nuevo elemento de cada personaje para ordenar
 
-  setRmOrderedData(rmDataConVersiones.sort((a, b) => a.versiones < b.versiones));
+  /* setRmOrderedData(rmDataConVersiones.sort((a, b) => a.versiones < b.versiones)); */
+  setRmOrderedData(rmDataConVersiones.sort((a, b) => a.chars.length < b.chars.length));
 
   return <div>Ordenador</div>;
 };

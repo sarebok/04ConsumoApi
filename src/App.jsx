@@ -17,12 +17,14 @@ function App() {
   const [rmOrderedData, setRmOrderedData] = useState([]);
   const [personajesUnificados, setPersonajesUnificados] = useState([]);
 
+  console.log("ordered", rmOrderedData);
+  console.log("unificados", personajesUnificados);
   return (
     <>
       <MiApi setRickAndMortyData={setRickAndMortyData} />
       <AgregaVersiones rickAndMortyData={rickAndMortyData} setRmDataConVersiones={setRmDataConVersiones} />
       <AgrupaPersonajes rmDataConVersiones={rmDataConVersiones} setPersonajesUnificados={setPersonajesUnificados} />
-      <Ordenador rmDataConVersiones={rmDataConVersiones} setRmOrderedData={setRmOrderedData} />
+      <Ordenador rmDataConVersiones={personajesUnificados} setRmOrderedData={setRmOrderedData} />
       <Buscador rickAndMortyData={rmOrderedData} setRmFilteredData={setRmFilteredData} filteredCounter={filteredCounter} />
       <MyCard rmCardData={rmFilteredData.length > 0 ? rmFilteredData : rmOrderedData} setFilteredCounter={setFilteredCounter} />
     </>

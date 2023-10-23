@@ -27,3 +27,11 @@
   width: 80%;
   height: 2rem;
 }
+
+.card-text {
+  display: flex;
+}
+.card-text .name,
+.id {
+  margin-left: 0.5rem;
+}

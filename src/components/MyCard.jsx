@@ -6,13 +6,23 @@ const MyCard = ({ rmCardData, setFilteredCounter }) => {
     setFilteredCounter(rmCardData.length);
   }, [rmCardData]);
 
+  const characterVersions = (characterName) => {
+    const str = characterName;
+    const words = str.split(" "); // Split the string on spaces
+    const firstWord = words[0]; // Get the first element of the array
+    return rmCardData.filter((character) => character.name.includes(firstWord)).length;
+  };
+
   return (
     <div className="cards-container">
       {rmCardData.map(({ id, name, image }) => (
         <div key={id} className="card-div">
           <img src={image} alt="" />
-          <p>{id}</p>
-          <p>{name}</p>
+          <div className="card-text">
+            <p className="id">{id}.- </p>
+            <p className="name">{name}</p>
+          </div>
+          <p className="Versions">versiones: {characterVersions(name)}</p>
         </div>
       ))}
     </div>

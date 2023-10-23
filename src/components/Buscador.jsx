@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Buscador = () => {
-  return <div>Buscador</div>;
+const Buscador = ({ setFilterInput, filterInput }) => {
+  console.log("filterinput buscador ", filterInput);
+  return (
+    <div>
+      <input type="text" placeholder="filtro" onChange={(e) => setFilterInput(e.target.value)} value={filterInput} />
+    </div>
+  );
 };
 
 export default Buscador;

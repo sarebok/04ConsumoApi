@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./MyCard";
 
 const Buscador = ({ setFilterInput, filterInput }) => {
   console.log("filterinput buscador ", filterInput);

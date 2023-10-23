@@ -1,7 +1,15 @@
 import React from "react";
 
-const MyCard = () => {
-  return <div>MyCard</div>;
+const MyCard = ({ rmCardData }) => {
+  return (
+    <div>
+      {" "}
+      MyCard
+      {rmCardData.map(({ id, name }) => (
+        <p key={id}>{name}</p>
+      ))}
+    </div>
+  );
 };
 
 export default MyCard;

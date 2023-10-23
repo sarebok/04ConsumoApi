@@ -4,6 +4,7 @@ import "./components/MiApi";
 import "./components/Buscador";
 import MiApi from "./components/MiApi";
 import Buscador from "./components/Buscador";
+import MyCard from "./components/MyCard";
 
 function App() {
   const [filterInput, setFilterInput] = useState("");

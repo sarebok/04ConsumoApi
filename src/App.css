@@ -1,3 +1,15 @@
 .api-div {
   border: 1px solid black;
+  padding: 1rem;
+}
+
+.cards-container {
+  border: 1px solid #000000;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-div {
+  margin: 1rem;
+  background-color: aqua;
 }

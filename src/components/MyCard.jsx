@@ -8,8 +8,8 @@ const MyCard = ({ rmCardData, setFilteredCounter }) => {
 
   const characterVersions = (characterName) => {
     const str = characterName;
-    const words = str.split(" "); // Split the string on spaces
-    const firstWord = words[0]; // Get the first element of the array
+    const words = str.split(" ");
+    const firstWord = words[0];
     return rmCardData.filter((character) => character.name.includes(firstWord)).length;
   };
 

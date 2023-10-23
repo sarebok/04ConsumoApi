@@ -6,7 +6,7 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <header>
-      <h1>Rick & Morty</h1>
+      <h1 className="main-title">Rick & Morty</h1>
     </header>
     <App />
     <footer>

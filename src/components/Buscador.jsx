@@ -1,11 +1,23 @@
-import React, { useState } from "react";
 import "./MyCard";
+import { useState, useEffect } from "react";
 
-const Buscador = ({ setFilterInput, filterInput }) => {
-  console.log("filterinput buscador ", filterInput);
+const Buscador = ({ rickAndMortyData, setRmFilteredData, filteredCounter }) => {
+  const [filterInput, setFilterInput] = useState("");
+
+  useEffect(() => {
+    setRmFilteredData(rickAndMortyData.filter((character) => character.name.toLowerCase().includes(filterInput.toLowerCase())));
+  }, [filterInput]);
+
   return (
-    <div>
-      <input type="text" placeholder="filtro" onChange={(e) => setFilterInput(e.target.value)} value={filterInput} />
+    <div className="filter-container">
+      <input
+        className="busca-nombre"
+        type="text"
+        placeholder="Escribe un nombre para buscar"
+        value={filterInput}
+        onChange={(e) => setFilterInput(e.target.value)}
+      />
+      <p>personajes encontrados: {filteredCounter}</p>
     </div>
   );
 };

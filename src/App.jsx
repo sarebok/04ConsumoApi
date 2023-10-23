@@ -7,13 +7,15 @@ import Buscador from "./components/Buscador";
 import MyCard from "./components/MyCard";
 
 function App() {
-  const [filterInput, setFilterInput] = useState("");
-  console.log("filterinput app: ", filterInput);
+  const [rickAndMortyData, setRickAndMortyData] = useState([]);
+  const [rmFilteredData, setRmFilteredData] = useState([]);
+  const [filteredCounter, setFilteredCounter] = useState(rickAndMortyData.length);
+
   return (
     <>
-      <h1>App</h1>
-      <Buscador setFilterInput={setFilterInput} filterInput={filterInput} />
-      <MiApi filterInput={filterInput} />
+      <Buscador rickAndMortyData={rickAndMortyData} setRmFilteredData={setRmFilteredData} filteredCounter={filteredCounter} />
+      <MiApi setRickAndMortyData={setRickAndMortyData} />
+      <MyCard rmCardData={rmFilteredData.length > 0 ? rmFilteredData : rickAndMortyData} setFilteredCounter={setFilteredCounter} />
     </>
   );
 }

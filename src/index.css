@@ -3,9 +3,22 @@ body {
   background-color: black;
 }
 
+p {
+  margin: 0.2rem;
+}
+
 h1,
+h2,
+h3,
+h4,
+h5,
 p {
   color: #f1f1f1;
+  font-family: "Dosis", sans-serif;
+}
+
+h3 {
+  color: #ffffff;
   font-family: "Dosis", sans-serif;
 }
 

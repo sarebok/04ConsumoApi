@@ -5,11 +5,11 @@ const Ordenador = ({ rmDataConVersiones, setRmOrderedData }) => {
 
   useEffect(() => {
     let newArray = [...rmDataConVersiones];
-    if (sortMethod === "masmenos") {
+    if (sortMethod === "versiones") {
       newArray.sort((a, b) => b.chars.length - a.chars.length);
     }
-    if (sortMethod === "menosmas") {
-      newArray.sort((a, b) => a.chars.length - b.chars.length);
+    if (sortMethod === "id") {
+      newArray.sort((a, b) => a.chars[0].id - b.chars[0].id);
     }
     setRmOrderedData(newArray);
   }, [sortMethod, rmDataConVersiones]);
@@ -17,8 +17,8 @@ const Ordenador = ({ rmDataConVersiones, setRmOrderedData }) => {
   return (
     <div className="ordenador">
       <p>ordenar por:</p>
-      <button onClick={() => setSortMethod("masmenos")}>Mayor a Menor</button>
-      <button onClick={() => setSortMethod("menosmas")}>Menor a Mayor</button>
+      <button onClick={() => setSortMethod("versiones")}>Multiversiones</button>
+      <button onClick={() => setSortMethod("id")}>Id original</button>
     </div>
   );
 };

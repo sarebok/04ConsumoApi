@@ -43,6 +43,7 @@ const AgrupaPersonajes = ({ rmDataConVersiones, setPersonajesUnificados }) => {
     for (let i = 0; i < dictionary.length; i++) {
       unifiedChars = rmDataConVersiones.filter((char) => char.name.includes(dictionary[i]));
       let id = i;
+      /* let id = unifiedChars.id; */
       unifiedArray.push({ id: id++, name: dict[i], chars: unifiedChars });
     }
     setPersonajesUnificados(unifiedArray);

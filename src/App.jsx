@@ -19,12 +19,18 @@ function App() {
 
   return (
     <>
+      <header>
+        <h1 className="main-title">Rick & Morty</h1>
+      </header>
       <MiApi setRickAndMortyData={setRickAndMortyData} />
       <AgregaVersiones rickAndMortyData={rickAndMortyData} setRmDataConVersiones={setRmDataConVersiones} />
       <AgrupaPersonajes rmDataConVersiones={rmDataConVersiones} setPersonajesUnificados={setPersonajesUnificados} />
       <Ordenador rmDataConVersiones={personajesUnificados} setRmOrderedData={setRmOrderedData} />
       <Buscador rickAndMortyData={rmOrderedData} setRmFilteredData={setRmFilteredData} filteredCounter={filteredCounter} />
       <MyCard rmCardData={rmFilteredData.length > 0 ? rmFilteredData : rmOrderedData} setFilteredCounter={setFilteredCounter} />
+      <footer>
+        <p>Gary Gutierrez</p>
+      </footer>
     </>
   );
 }

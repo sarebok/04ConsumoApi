@@ -19,11 +19,11 @@ const MyCard = ({ rmCardData, setFilteredCounter }) => {
         <div key={id} className="card-div">
           <img src={chars[0].image} alt="" />
           <div className="card-text">
-            <p className="id">{chars[0].id}.- </p>
             <p className="name">agrupado {name}</p>
+            <p className="Versions">Multi-versiones: {chars.length}</p>
+            <p className="id">{chars[0].id}</p>
           </div>
           <p className="name">Nombre char: {chars[0].name}</p>
-          <p className="Versions">versiones: {chars.length}</p>
         </div>
       ))}
     </div>

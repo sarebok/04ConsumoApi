@@ -17,8 +17,10 @@ function App() {
   const [rmOrderedData, setRmOrderedData] = useState([]);
   const [personajesUnificados, setPersonajesUnificados] = useState([]);
 
-  console.log("ordered", rmOrderedData);
-  console.log("unificados", personajesUnificados);
+  useEffect(() => {
+    console.log("ordereddata: ", rmOrderedData);
+  }, [rmOrderedData]);
+
   return (
     <>
       <MiApi setRickAndMortyData={setRickAndMortyData} />

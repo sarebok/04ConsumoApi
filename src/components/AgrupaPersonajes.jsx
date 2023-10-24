@@ -30,10 +30,9 @@ const AgrupaPersonajes = ({ rmDataConVersiones, setPersonajesUnificados }) => {
 
     for (let i = 0; i < dict.length; i++) {
       unifiedChars = rmDataConVersiones.filter((char) => char.name.includes(dict[i]));
-      setKey(Date.now() * i);
-      unifiedArray.push({ id: key, name: dict[i], chars: unifiedChars });
+      let id = i;
+      unifiedArray.push({ id: id++, name: dict[i], chars: unifiedChars });
     }
-    console.log("unified otro", unifiedChars);
     setPersonajesUnificados(unifiedArray);
   };
 

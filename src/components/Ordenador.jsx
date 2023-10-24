@@ -16,7 +16,7 @@ const Ordenador = ({ rmDataConVersiones, setRmOrderedData }) => {
   }, [sortMethod, rmDataConVersiones]);
 
   return (
-    <div>
+    <div className="ordenador">
       <p>ordenar por:</p>
       <button onClick={() => setSortMethod("masmenos")}>Mayor a Menor</button>
       <button onClick={() => setSortMethod("menosmas")}>Menor a Mayor</button>

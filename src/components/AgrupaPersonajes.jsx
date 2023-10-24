@@ -27,19 +27,22 @@ const AgrupaPersonajes = ({ rmDataConVersiones, setPersonajesUnificados }) => {
   const unificarPersonajes = () => {
     const unifiedArray = [];
     let unifiedChars = [];
-
-    for (let i = 0; i < dict.length; i++) {
-      unifiedChars = rmDataConVersiones.filter((char) => char.name.includes(dict[i]));
+    const dictionary = [...dict];
+    for (let i = 0; i < dictionary.length; i++) {
+      unifiedChars = rmDataConVersiones.filter((char) => char.name.includes(dictionary[i]));
       let id = i;
       unifiedArray.push({ id: id++, name: dict[i], chars: unifiedChars });
     }
     setPersonajesUnificados(unifiedArray);
+    console.log(unifiedArray);
   };
 
   useEffect(() => {
     createDict(rmDataConVersiones);
-    unificarPersonajes();
   }, [rmDataConVersiones]);
+  useEffect(() => {
+    unificarPersonajes();
+  }, [dict]);
 
   return <div>AgrupaPersonajes</div>;
 };

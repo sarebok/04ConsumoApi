@@ -12,7 +12,6 @@ const Ordenador = ({ rmDataConVersiones, setRmOrderedData }) => {
       newArray.sort((a, b) => a.chars.length - b.chars.length);
     }
     setRmOrderedData(newArray);
-    console.log("sort2", newArray);
   }, [sortMethod, rmDataConVersiones]);
 
   return (

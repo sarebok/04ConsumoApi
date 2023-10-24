@@ -8,7 +8,19 @@ const AgrupaPersonajes = ({ rmDataConVersiones, setPersonajesUnificados }) => {
   const getFirstName = (object) => {
     const fullName = object.name;
     const separateNames = fullName.split(" ");
-    const firstName = separateNames[0];
+    let firstName = separateNames[0];
+    const lastTwoChars = firstName.slice(firstName.length - 2);
+    const lastThreeChars = firstName.slice(firstName.length - 3);
+    const lastFourChars = firstName.slice(firstName.length - 4);
+    if (lastTwoChars === "'s") {
+      firstName = firstName.slice(0, firstName.length - 2);
+    }
+    if (lastThreeChars === "Mr.") {
+      firstName = fullName;
+    }
+    if (lastFourChars === "Mrs.") {
+      firstName = fullName;
+    }
     return firstName;
   };
   const createDict = (characterArray) => {
@@ -34,7 +46,6 @@ const AgrupaPersonajes = ({ rmDataConVersiones, setPersonajesUnificados }) => {
       unifiedArray.push({ id: id++, name: dict[i], chars: unifiedChars });
     }
     setPersonajesUnificados(unifiedArray);
-    console.log(unifiedArray);
   };
 
   useEffect(() => {
